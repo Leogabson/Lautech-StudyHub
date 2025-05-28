@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign Up - Lautech StudyHub</title>
+    <link rel="stylesheet" href="signup.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <header>
+      <div class="container">
+        <div class="logo">
+          <img src="logo.png" alt="Lautech Logo" />
+          <span>Course</span>
+        </div>
+        <div class="user-info">
+          <a href="index.html">
+            <button>Home</button>
+          </a>
+
+          <button id="loginToggle">Log In</button>
+        </div>
+      </div>
+    </header>
+
+    <main class="signup-container">
+      <aside class="sidebar">
+        <ul>
+          <li class="active">Courses</li>
+          <li>Past Questions</li>
+          <li>Ask Question</li>
+        </ul>
+      </aside>
+
+      <section class="form-section">
+        <h2>Sign Up</h2>
+        <form onsubmit="goToDashboard(event)">
+          <div class="form-grid">
+            <div>
+              <label>Full Name</label>
+              <input type="text" placeholder="Enter full name" />
+            </div>
+            <div>
+              <label>Email</label>
+              <input type="email" placeholder="Enter email" />
+            </div>
+            <div>
+              <label>Password</label>
+              <input type="password" placeholder="Enter password" />
+            </div>
+            <div>
+              <label>Confirm Password</label>
+              <input type="password" placeholder="Confirm password" />
+            </div>
+          </div>
+
+          <div class="form-row">
+            <label>Matric Number</label>
+            <select>
+              <option>2022003869</option>
+            </select>
+          </div>
+
+          <div class="form-row">
+            <label>Upload School ID Card</label>
+            <input type="file" />
+          </div>
+
+          <button type="submit" class="signup-btn">Sign Up</button>
+        </form>
+
+        <!-- Hidden Login Form -->
+        <div id="loginForm" class="login-form open">
+          <h2>Log In</h2>
+          <form onsubmit="goToDashboard(event)">
+            <div class="form-row">
+              <label>Email</label>
+              <input type="email" placeholder="Enter email" />
+            </div>
+            <div class="form-row">
+              <label>Password</label>
+              <input type="password" placeholder="Enter password" />
+            </div>
+            <button type="submit" class="signup-btn">Log In</button>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <script src="signup.js"></script>
+  </body>
+</html>
