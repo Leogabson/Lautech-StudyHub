@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard - Lautech StudyHub</title>
+    <link rel="stylesheet" href="dashboard.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="dashboard-container">
+      <aside class="sidebar">
+        <div class="logo">
+          <img src="logo.png" alt="Logo" />
+          <h2>StudyHub</h2>
+        </div>
+        <nav>
+          <ul>
+            <li class="nav-link active" data-target="dashboard-overview">
+              Dashboard
+            </li>
+            <li class="nav-link" data-target="courses-section">Courses</li>
+            <li class="nav-link" data-target="past-questions-section">
+              Past Questions
+            </li>
+            <li class="nav-link" data-target="ask-question-section"> 
+              Ask Question
+            </li> 
+            <li class="nav-link" data-target="study-alerts-section">
+              Study Alerts
+            </li>
+
+            <li class="nav-link" data-target="study-groups-section">
+              Study Groups
+            </li>
+
+            <li class="nav-link" data-target="leaderboard-section">
+              Leaderboard
+            </li>
+          </ul>
+        </nav>
+      </aside>
+
+      <main class="main-content">
+        <header class="topbar">
+          <div class="welcome">Welcome, Gabriel 👋</div>
+          <div class="topbar-right">
+            <span class="notification">🔔</span>
+            <img src="headshot.jpg" alt="User" class="user-avatar" />
+            <button id="logoutBtn" class="logout-btn">Log Out</button>
+          </div>
+        </header>
+
+        <section id="dashboard-overview" class="section active">
+          <h1>Dashboard Overview</h1>
+          <div class="stats-grid">
+            <div class="stat-card">
+              <h3>Courses Joined</h3>
+              <p>8</p>
+            </div>
+            <div class="stat-card">
+              <h3>Questions Answered</h3>
+              <p>15</p>
+            </div>
+            <div class="stat-card">
+              <h3>Study Alerts</h3>
+              <p>3 Upcoming</p>
+            </div>
+          </div>
+        </section>
+
+        <section id="courses-section" class="section">
+          <div class="courses-header">
+            <h1>My Courses</h1>
+            <button class="join-btn">+ Join New Course</button>
+          </div>
+           
+         
+          <!-- filter-panel -->
+          <div class="filter-panel">
+           <select id="faculty-filter">
+             <option value="">Select Faculty</option>
+             <option>Pure and Applied Sciences</option>
+             <option>Engineering</option>
+             <option>Management Sciences</option>
+           </select>
+
+            <select id="department-filter">
+              <option value="">Select Department</option>
+              <option>Computer Science</option>
+              <option>Electrical Engineering</option>
+              <option>Accounting</option>
+           </select>
+
+            <select id="level-filter">
+              <option value="">Select Level</option>
+              <option>100L</option>
+              <option>200L</option>
+              <option>300L</option>
+              <option>400L</option>
+              <option>500l</option>
+            </select>
+
+           <select id="semester-filter">
+             <option value="">Select Semester</option>
+             <option>Harmattan</option>
+             <option>Rain</option>
+           </select>
+         </div>
+
+  
+          <div class="course-list">
+            <div class="course-card">
+              <h3>EEE 332 - Engineering Analysis II</h3>
+              <p>3 Threads · 14 Replies</p>
+            </div>
+
+            <div class="course-card">
+              <h3>MEE 216 - Strength of Material</h3>
+              <p>5 Threads · 22 Replies</p>
+            </div>
+
+            <div class="course-card">
+              <h3>CPE 302 - Software Developtment Techniques</h3>
+              <p>2 Threads · 7 Replies</p>
+            </div>
+
+            <div class="course-card">
+              <h3>CPE 304 - Digital Electronic Circuit</h3>
+              <p>2 Threads · 7 Replies</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- course-mate -->
+        <section id="course-thread-section" class="section">
+          <div class="thread-header">
+            <button id="backToCourses" class="back-btn">
+              ← Back to Courses
+            </button>
+            <h2>EEE332 - Engineering Analysis II</h2>
+          </div>
+
+          <!-- Q&A View -->
+          <div id="qa-tab" class="thread-tab-content active">
+            <div class="thread-posts"></div>
+
+            <div class="new-post-form">
+              <textarea
+                placeholder="Ask a question or share something..."
+              ></textarea>
+              <button class="post-btn">Post</button>
+            </div>
+          </div>
+
+          <!-- Course Mates View -->
+          <div id="mates-tab" class="thread-tab-content">
+            <div class="mates-list">
+              <div class="mate-card">
+                <img src="assets/user.png" alt="Profile" />
+                <div class="mate-info">
+                  <h4>Ehuwa Gabriel</h4>
+                  <p>300L · Computer Engineering</p>
+                  <span class="status online">● Online</span>
+                  <button class="invite-btn">+ Invite to Study Group</button>
+                </div>
+              </div>
+
+              <div class="mate-card">
+                <img src="assets/user.png" alt="Profile" />
+                <div class="mate-info">
+                  <h4>Elizbeth Olayinka</h4>
+                  <p>300L · Computer Engineeringe</p>
+                  <span class="status offline">● Last seen 2h ago</span>
+                  <button class="invite-btn">+ Invite to Study Group</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="thread-tabs">
+            <button class="thread-tab active" data-tab="qa">Q&A</button>
+            <button class="thread-tab" data-tab="mates">Course Mates</button>
+          </div>
+
+          <div class="thread-posts">
+            <div class="post">
+              <div class="post-votes">👍 12</div>
+              <div class="post-content">
+                <p class="question">
+                  What are the 2 ways of Solving optimization?
+                </p>
+                <div class="tags">
+                  <span>#linked-list</span> <span>#memory</span>
+                </div>
+                <div class="replies">
+                  <p><strong>Reply:</strong> Graphical & simplex Method</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="post">
+              <div class="post-votes">👍 7</div>
+              <div class="post-content">
+                <p class="question">
+                  What's the time complexity of inserting in a linked list?
+                </p>
+                <div class="tags"><span>#complexity</span></div>
+                <div class="replies">
+                  <p><strong>Reply:</strong> O(1) if inserting at the head.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="new-post-form">
+            <textarea
+              placeholder="Ask a question or share something..."
+            ></textarea>
+            <button class="post-btn">Post</button>
+          </div>
+        </section>
+
+        <!-- past-question vault -->
+        <section id="past-questions-section" class="section">
+          <div class="pq-header">
+            <h2>Past Question Vault</h2>
+            <div class="upload-box">
+              <input type="file" id="uploadInput" accept=".pdf,.txt" />
+              <button class="upload-btn">Upload</button>
+            </div>
+          </div>
+
+          <div class="pq-list">
+            <div class="pq-card">
+              <h3>CPE301 - 2021/2022 Harmattan</h3>
+              <p class="pq-desc">
+                Discuss the time complexity of common data structures.
+              </p>
+              <div class="pq-answers">
+                <p>
+                  <strong>Answer:</strong> Time complexity varies by operation.
+                  For example, insertion in a linked list is O(1).
+                </p>
+                <div class="pq-votes">👍 10</div>
+              </div>
+            </div>
+
+            <div class="pq-card">
+              <h3>PHY102 - 2020/2021 Rain</h3>
+              <p class="pq-desc">
+                State and explain Faraday's Law of Electromagnetic Induction.
+              </p>
+              <div class="pq-answers">
+                <p>
+                  <strong>Answer:</strong> It explains how a changing magnetic
+                  field induces voltage.
+                </p>
+                <div class="pq-votes">👍 7</div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="study-alerts-section" class="section">
+          <div class="alerts-header">
+           <h2>Study Alerts</h2>
+         </div>
+
+          <div class="alerts-list">
+            <div class="alert-card test">
+             <h3>📘 PHY102 — Test</h3>
+              <p>Mid-semester test coming up next week. Covers chapters 1–5.</p>
+              <span class="alert-time">🗓️ June 5 · 10:00 AM</span>
+           </div>
+
+            <div class="alert-card class">
+              <h3>📚 CSC201 — Extra Class</h3>
+              <p>Impromptu data structures class announced by Dr. Kayode.</p>
+              <span class="alert-time">🗓️ June 2 · 4:00 PM</span>
+            </div>
+
+            
+            <div class="alert-card group">
+              <h3>👥 MTH101 — Study Group</h3>
+              <p>Join a focused session with 200L math students on calculus tips.</p>
+              <span class="alert-time">🗓️ June 1 · 8:00 PM</span>
+          </div>
+        </section>
+
+
+        <section id="study-groups-section" class="section">
+         <div class="group-header">
+            <h2>Study Groups</h2>
+            <button class="create-group-btn">+ Create New Group</button>
+         </div>
+ 
+          <div class="group-list">
+            <div class="group-card">
+             <h3>CSC201 Study Squad</h3>
+              <p>Course: CSC201 - Data Structures</p>
+              <p>Members: 5 / 10</p>
+              <span class="group-status open">Status: Open</span>
+              <button class="join-btn">Join Group</button>
+            </div>
+
+            <div class="group-card">
+              <h3>MTH101 Weekend Warriors</h3>
+              <p>Course: MTH101 - Calculus</p>
+              <p>Members: 10 / 10</p>
+              <span class="group-status full">Status: Full</span>
+              <button class="join-btn" disabled>Full</button>
+            </div>
+          </div>
+        </section>
+
+      </main>
+    </div>
+
+    <script src="dashboard.js"></script>
+  </body>
+</html>
